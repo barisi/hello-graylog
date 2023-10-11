@@ -1,0 +1,14 @@
+{
+  "name": "graylog-hello-word",
+  "version": "1.0.0",
+  "description": "Simple Hello World app",
+  "author": "Barisi Kane",
+  "license": "MIT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
