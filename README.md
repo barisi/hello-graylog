@@ -72,3 +72,22 @@ Forwarding from 127.0.0.1:4002 -> 4002
 Forwarding from [::1]:4002 -> 4002
 ```
 Finally, navigate to [http://localhost:4002/](http://localhost:4002/) in a browser while leaving your terminal window open in order to access the application
+
+## Assumptions
+The main assumption is that this is a proof-of-concept meant to show how an application/microservice can be deployed and managed in kubernetes using helm. 
+
+It doesn't attempt to showcase a _full stack_ application with web, application and database tiers and any caching layers inbetween.
+
+## Architecture
+![Architecture](./images/architecture.png)
+
+## Further enhancements
+The first enhancement to this soultion would be in the application code. It will require unit tests to ensure that it functions as expected. If there is any information processing required, that would be separated out to a different _application_ service and if there is any data storage or retrieval required an appropriate database with access restricted to the application layer will be added.
+
+Depending on scaling and performance requirements, caching layers can be added, for example a CDN for the web layer and an in-memory cache like redis for the database layer.
+
+Next a fully automated CI pipeline which will build, test and push the docker image to a registry will be developed in other to ensure repeatability of builds.
+
+A CD pipeline will also be developed to take the built docker image and deploy it in muiltiple environments through to production using the helm chart. This will be done following a GitOps paradigmn using ArgoCD.
+
+Lastly a load balancer and an ingress controller will be introduced into the architecture in order to facilitate access to the application from outside the kubernetes cluster. A web application firewall can also be added to the loadbalancer in order to detect and block malicious traffic.
