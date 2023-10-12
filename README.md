@@ -82,7 +82,7 @@ It doesn't attempt to showcase a _full stack_ application with web, application 
 ![Architecture](./images/architecture.png)
 
 ## Further enhancements
-The first enhancement to this soultion would be in the application code. It will require unit tests to ensure that it functions as expected. If there is any information processing required, that would be separated out to a different _application_ service and if there is any data storage or retrieval required an appropriate database with access restricted to the application layer will be added.
+The first enhancement to this solution would be in the application code. It will require unit tests to ensure that it functions as expected. If there is any information processing required, that would be separated out to a different _application_ service and if there is any data storage or retrieval required an appropriate database with access restricted to the application layer will be added.
 
 Depending on scaling and performance requirements, caching layers can be added, for example a CDN for the web layer and an in-memory cache like redis for the database layer.
 
